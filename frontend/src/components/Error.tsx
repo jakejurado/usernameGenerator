@@ -2,6 +2,7 @@ import {FC} from 'react';
 import useUsername from '../hooks/useUsername';
 import '../styles/Error.css';
 
+// Error component to display error message and refresh button
 const Error: FC = () => {
   const {error, resetUsername} = useUsername();
 

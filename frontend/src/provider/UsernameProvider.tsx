@@ -15,6 +15,7 @@ interface Props {
   children: ReactNode;
 }
 
+// UsernameProvider component to provide username context (works with useUsername hook)
 const UsernameProvider: FC<Props> = ({ children }) => {
   const [username, setUsername] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);

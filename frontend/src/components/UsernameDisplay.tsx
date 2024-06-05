@@ -2,6 +2,7 @@ import '../styles/UsernameDisplay.css';
 import useUsername from '../hooks/useUsername';
 
 
+// UsernameDisplay component to display username and refresh button
 const UsernameDisplay = () => {
   const { username, resetUsername } = useUsername();
   return (

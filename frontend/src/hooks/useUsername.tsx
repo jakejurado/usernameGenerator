@@ -10,6 +10,7 @@ interface UseUsernameResult {
   loading: boolean;
 }
 
+// Custom hook to use the username context
 const useUsername = (): UseUsernameResult => {
   const context = useContext(UsernameContext);
 

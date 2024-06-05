@@ -32,10 +32,12 @@ app.post('/generateUsername', (req: Request<{}, {}, UsernameRequestBody>, res: R
   try {
     const { firstName, lastName, dateOfBirth, favoriteFruit } = req.body;
 
+    // Confirm all fields are present
     if (!firstName || !lastName || !dateOfBirth || !favoriteFruit) {
       return res.status(400).json({ error: 'All fields are required.' });
     }
 
+    // Confirm characters are valid
     if(!/^[a-zA-Z ]+$/.test(firstName) 
       || !/^[a-zA-Z ]+$/.test(lastName) 
       || !/^[a-zA-Z]+$/.test(favoriteFruit)
@@ -43,11 +45,13 @@ app.post('/generateUsername', (req: Request<{}, {}, UsernameRequestBody>, res: R
       return res.status(400).json({ error: 'Invalid input format.' });
     }
 
+    //Confirm that the date is valid
     const date = new Date(dateOfBirth);
     if (isNaN(date.getTime())) {
       return res.status(400).json({ error: 'Invalid date format.' });
     }
 
+    //Remove spaces and convert to lowercase
     const first = firstName.split(' ').join('_').toLocaleLowerCase();
     const last = lastName.split(' ').join('_').toLocaleLowerCase();
     
@@ -61,7 +65,7 @@ app.post('/generateUsername', (req: Request<{}, {}, UsernameRequestBody>, res: R
   }
 });
 
-
+// Catch-all error handler
 app.use((err: ErrorWithStatus, req: Request, res: Response, next: NextFunction) => {
   console.error('Unhandled error:', err);
   res.status(err.status || 500).json({ error: 'Internal server error.' });

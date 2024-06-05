@@ -4,6 +4,7 @@ import useUsername from '../hooks/useUsername';
 import '../styles/UsernameForm.css';
 import { FormData } from '../types/types';
 
+// UsernameForm component to display form to input user details
 const UsernameForm: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
   const [dateOfBirthColor, setDateOfBirthColor] = useState<string>('rgb(128, 128, 128)');
