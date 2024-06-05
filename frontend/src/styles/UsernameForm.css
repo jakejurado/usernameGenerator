@@ -1,0 +1,76 @@
+#usernameForm{
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+#usernameForm ul{
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin:0;
+  padding: 1em;
+  background-color: #e0e0b3;
+  border-radius: 15px; 
+  box-shadow: 5px 5px 10px rgb(128, 128,128);
+}
+
+#usernameForm li{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: .5em;
+}
+
+#usernameForm label{
+  font-family: monospace;
+  color: rgb(128, 128, 128);
+  align-self: flex-start;
+  color: rgb(75, 70, 70);
+}
+
+input{
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 1em;
+    width: 100%;
+    transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+input:hover{
+  border-color: rgb(128, 128, 0);;
+}
+
+input:focus{
+  outline: rgb(128, 128, 0);;
+  border: 2px solid rgb(128, 128, 0);;
+}
+
+.inputColorGray{
+  color: rgb(128, 128,128);
+}
+
+.inputColorBlack{
+  color: black;
+}
+
+.error{
+  font-family: monospace;
+  color: red;
+  align-self: center
+}
+
+#usernameForm button{
+  margin-top: 2em;
+}
+
+
+@media screen and (max-width: 400px) {
+  #usernameForm{
+    width: 90%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    min-width:300px;
+  }
+}
